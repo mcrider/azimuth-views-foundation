@@ -1,0 +1,12 @@
+<template name="blog_post">
+  <div class="container">
+    <div class="row">
+      <div class="large-10 columns">
+        {{#with block}}
+          <h1>{{title}}</h1>
+          <p>{{{contents}}}</p>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,79 @@
+<template name="header">
+  <nav class="top-bar">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>{{#ifSetting 'logoUrl'}}<img class="logo" src="{{getSetting 'logoUrl'}}">{{/ifSetting}}{{getSetting 'siteName'}}</h1>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      {{#if isInRole 'admin'}}
+        <ul class="right">
+          <li class="has-dropdown not-click">
+            <a href="#"><i class="icon-cogs"></i> <b class="caret"></b></a>
+            <ul id="adminMenu" class="dropdown">
+              <li><label>Admin</label></li>
+              <li><a href="/settings">Site Settings</a></li>
+              <li><a href="/navigation">Site Navigation</a></li>
+              <li><a href="/users">Users</a></li>
+              <li><a href="/new_page">New Page</a></li>
+              <li class="has-dropdown not-click">
+                <a href="#">Edit Page</a>
+                <ul class="dropdown">
+                  {{#each pages}}
+                    <li><a href="/{{slug}}/edit">{{title}}</a></li>
+                  {{/each}}
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      {{/if}}
+      {{#ifSetting 'showLoginInHeader'}}
+        <ul class="right">
+          <li class=""><a href="/login">Login</a></li>
+        </ul>
+      {{/ifSetting}}
+      {{#with headerNav}}
+        {{>header_nav_root}}
+      {{/with}}
+    </section>
+  </nav>
+</template>
+
+<template name="header_nav_root">
+  <ul class="right">
+    {{#each this}}
+      {{#if children}}
+        <li class="has-dropdown not-click hover">
+          <a href="{{slug}}" data-toggle="dropdown">{{title}}<b class="caret"></b></a>
+          {{>header_nav_child}}
+        </li>
+      {{else}}
+        <li>
+          <a href="/{{slug}}">{{title}}</a>
+        </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="header_nav_child">
+  <ul class="has-dropdown">
+    {{#each children}}
+      {{#if children}}
+        <li class="dropdown">
+          <a class="dropdown-toggle disabled" href="{{slug}}">{{title}}<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            {{>header_nav_child}}
+          </ul>
+        </li>
+      {{else}}
+        <li>
+          <a href="/{{slug}}">{{title}}</a>
+        </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+</template>

@@ -1,0 +1,18 @@
+<template name="home_page">
+{{#with page}}
+    <div class="hero-unit">
+      <h1>{{hero-header}}</h1>
+      <p>{{{hero-sub}}}</p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="large-1 columns2">{{{contents}}}</div>
+      </div>
+      <div class="row">
+        <div class="home-blocks blocks blocks-body">
+          {{{renderBlocks zone="body"}}}
+        </div>
+      </div>
+  </div>
+{{/with}}
+</template>
