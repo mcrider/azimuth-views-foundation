@@ -3,7 +3,7 @@
     <ul class="title-area">
       <!-- Title Area -->
       <li class="name">
-        <h1>{{#ifSetting 'logoUrl'}}<img class="logo" src="{{getSetting 'logoUrl'}}">{{/ifSetting}}{{getSetting 'siteName'}}</h1>
+        <h1 class="nav-title">{{#ifSetting 'logoUrl'}}<img class="logo" src="{{getSetting 'logoUrl'}}">{{/ifSetting}}{{getSetting 'siteName'}}</h1>
       </li>
     </ul>
     <section class="top-bar-section">
@@ -32,7 +32,7 @@
       {{/if}}
       {{#ifSetting 'showLoginInHeader'}}
         <ul class="right">
-          <li class=""><a href="/login">Login</a></li>
+          <li class=""><a href="/login"><i class="icon-user logged-in"></i></a></li>
         </ul>
       {{/ifSetting}}
       {{#with headerNav}}
@@ -43,7 +43,7 @@
 </template>
 
 <template name="header_nav_root">
-  <ul class="right">
+  <ul class="left">
     {{#each this}}
       {{#if children}}
         <li class="has-dropdown not-click hover">

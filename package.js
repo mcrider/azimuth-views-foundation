@@ -56,7 +56,8 @@ Package.on_use(function (api) {
     'views/header.html',
     'views/pages/new_page.html',
     'views/pages/page_edit_bottom.html',
-    'views/pages/page_template_selector.html'
+    'views/pages/page_template_selector.html',
+    'lib/utils.js'
   ], 'client');
 });
 

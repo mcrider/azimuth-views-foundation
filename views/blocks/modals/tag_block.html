@@ -1,15 +1,12 @@
 <template name="tag_block">
-  <div class="modal hide" id="blockTagModal" data-zone={{zone}}>
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">×</button>
-      <h3>Add Blocks by Tag</h3>
-    </div>
+  <div class="reveal-modal" id="blockTagModal" data-zone={{zone}}>
+    <h3>Add Blocks by Tag</h3>
     <div class="modal-body">
       <input type="text" name="tag" id="tag" placeholder="Enter Tag" />
     </div>
     <div class="modal-footer">
-      <a class="btn" data-dismiss="modal">Cancel</a>
-      <a class="btn btn-danger add-block-by-tag">Add Blocks</a>
+      <a class="button" data-dismiss="modal">Cancel</a>
+      <a class="button button-danger add-block-by-tag">Add Blocks</a>
     </div>
-  </div> 
+  </div>
 </template>
