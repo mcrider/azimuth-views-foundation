@@ -4,6 +4,7 @@ Package.describe({
 
 Package.on_use(function (api) {
   api.use(['less'], 'client');
+  api.use(['foundation'], 'client');
 
   api.use(['templating'], 'client');
 
