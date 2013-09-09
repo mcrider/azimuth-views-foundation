@@ -3,9 +3,8 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.use(['less'], 'client');
-  api.use(['azimuth-core', 'foundation'], 'client');
-  api.use(['templating'], 'client');
+  api.use(['less', 'foundation', 'templating'], 'client');
+  api.use(['azimuth-core'], 'client', {unordered: true});
 
   api.add_files([
     'css/style.less',
