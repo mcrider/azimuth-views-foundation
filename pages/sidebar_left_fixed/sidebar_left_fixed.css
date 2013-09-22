@@ -8,6 +8,13 @@ ul {
   margin-left: 10px;
 }
 
+h4 {
+  margin: 6px 0 11px 0;
+}
+
+#toc {
+  margin-top: 50px;
+}
 pre {
   font-size: .9em;
 }
