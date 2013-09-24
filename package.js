@@ -34,6 +34,7 @@ Package.on_use(function (api) {
     'pages/sidebar_left_fixed/sidebar_left_fixed_edit.html',
     'pages/sidebar_right/sidebar_right.html',
     'pages/sidebar_right/sidebar_right_edit.html',
+    'views/layout.html',
     'views/404.html',
     'views/accounts/login_buttons.html',
     'views/accounts/login_buttons_dialogs.html',
