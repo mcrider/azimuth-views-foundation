@@ -36,6 +36,7 @@ Package.on_use(function (api) {
     'pages/sidebar_right/sidebar_right_edit.html',
     'views/layout.html',
     'views/404.html',
+    'views/not_authorized.html',
     'views/accounts/login_buttons.html',
     'views/accounts/login_buttons_dialogs.html',
     'views/accounts/login_buttons_dropdown.html',
