@@ -3,15 +3,16 @@
     <ul class="title-area">
       <!-- Title Area -->
       <li class="name">
-        <a href="/"><h1 class="nav-title">{{#ifSetting 'logoUrl'}}<img class="logo" src="{{getSetting 'logoUrl'}}">{{/ifSetting}}{{getSetting 'siteName'}}</h1></a>
+        <h1 class="nav-title"><a href="/">{{#ifSetting 'logoUrl'}}<img class="logo" src="{{getSetting 'logoUrl'}}">{{/ifSetting}}{{getSetting 'siteName'}}</a></h1>
       </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       {{#if isInRole 'admin'}}
         <ul class="right">
           <li class="has-dropdown not-click">
-            <a href="#"><i class="icon-cogs"></i> <b class="caret"></b></a>
+            <a href="#"><i class="icon-cogs"></i><span class="show-for-medium-down">Admin</span> <b class="caret"></b></a>
             <ul id="adminMenu" class="dropdown">
               <li><label>Admin</label></li>
               <li><a href="/site_settings">Site Settings</a></li>
@@ -32,13 +33,14 @@
       {{/if}}
       {{#ifSetting 'showLoginInHeader'}}
         <ul class="right">
-          <li class=""><a href="/login"><i class="icon-user logged-in"></i></a></li>
+          <li class=""><a href="/login"><i class="icon-user logged-in"></i><span class="show-for-medium-down">Login / Logout</span></a></li>
         </ul>
       {{/ifSetting}}
       {{#with headerNav}}
         {{>header_nav_root}}
       {{/with}}
     </section>
+
   </nav>
 </template>
 
@@ -46,7 +48,7 @@
   <ul class="left">
     {{#each this}}
       {{#if children}}
-        <li class="has-dropdown not-click hover">
+        <li class="has-dropdown">
           <a href="{{slug}}" data-toggle="dropdown">{{title}}<b class="caret"></b></a>
           {{>header_nav_child}}
         </li>
@@ -60,14 +62,12 @@
 </template>
 
 <template name="header_nav_child">
-  <ul class="has-dropdown">
+  <ul class="dropdown">
     {{#each children}}
       {{#if children}}
-        <li class="dropdown">
-          <a class="dropdown-toggle disabled" href="{{slug}}">{{title}}<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            {{>header_nav_child}}
-          </ul>
+        <li class="has-dropdown">
+          <a href="{{slug}}">{{title}}<b class="caret"></b></a>
+          {{>header_nav_child}}
         </li>
       {{else}}
         <li>

@@ -3,7 +3,7 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.use(['less', 'foundation', 'templating'], 'client');
+  api.use(['less', 'zurb-foundation', 'templating'], 'client');
   api.use(['azimuth-core'], 'client', {unordered: true});
 
   api.add_files([
