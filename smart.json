@@ -3,7 +3,7 @@
   "description": "Azimuth CMS frontend templates (using Foundation 4.x)",
   "homepage": "https://github.com/mcrider/azimuth-views-foundation",
   "author": "Matt Crider (http://matthewcrider.com)",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "git": "https://github.com/mcrider/azimuth-views-foundation.git",
   "packages": {
     "azimuth-core": {},
