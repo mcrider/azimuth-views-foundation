@@ -45,6 +45,7 @@ Package.on_use(function (api) {
     'views/admin/admin_users.html',
     'views/admin/navigation.html',
     'views/admin/site_settings.html',
+    'views/admin/assets.html',
     'views/blocks/block_display.html',
     'views/blocks/block_zone_editor.html',
     'views/blocks/modals/delete_block.html',
