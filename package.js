@@ -3,10 +3,28 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.use(['less', 'zurb-foundation', 'templating'], 'client');
+  api.use(['less', 'templating'], 'client');
   api.use(['azimuth-core'], 'client', {unordered: true});
 
   api.add_files([
+    'lib/foundation/css/foundation.css',
+    'lib/foundation/js/foundation.js',
+    'lib/foundation/js/foundation.abide.js',
+    'lib/foundation/js/foundation.alerts.js',
+    'lib/foundation/js/foundation.clearing.js',
+    'lib/foundation/js/foundation.cookie.js',
+    'lib/foundation/js/foundation.dropdown.js',
+    'lib/foundation/js/foundation.forms.js',
+    'lib/foundation/js/foundation.interchange.js',
+    'lib/foundation/js/foundation.joyride.js',
+    'lib/foundation/js/foundation.magellan.js',
+    'lib/foundation/js/foundation.orbit.js',
+    'lib/foundation/js/foundation.placeholder.js',
+    'lib/foundation/js/foundation.reveal.js',
+    'lib/foundation/js/foundation.section.js',
+    'lib/foundation/js/foundation.tooltips.js',
+    'lib/foundation/js/foundation.topbar.js',
+
     'css/style.less',
     'blocks/basic_content/basic_content.html',
     'blocks/basic_content/basic_content_edit.html',
