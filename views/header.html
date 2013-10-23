@@ -34,7 +34,7 @@
       {{/if}}
       {{#ifSetting 'showLoginInHeader'}}
         <ul class="right">
-          <li class=""><a href="/login"><i class="icon-user logged-in"></i><span class="show-for-small">Login / Logout</span></a></li>
+          <li class=""><a href="/login"><i class="icon-user{{#if signedInAs}} logged-in{{/if}}"></i><span class="show-for-small">Login / Logout</span></a></li>
         </ul>
       {{/ifSetting}}
       {{#with headerNav}}
