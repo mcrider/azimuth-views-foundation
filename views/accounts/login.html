@@ -1,29 +1,32 @@
 <template name='login'>
   <div class="container login">
     <div class="row">
-      <h3>Login</h3>
-      {{#if signedInAs}}
-        <p>Signed in as <strong>{{signedInAs}}</strong></p>
-        <a id="logout" class="button">Log out</a>
-      {{else}}
-        {{#if otherLoginServices}}
-          <div class="entry-social">
-            {{#each loginServices}}
-              {{> social}}
-            {{/each}}
-            <div class="email-option or-sign-in">Or...</div>
-          </div>
+      <div class="large-6">
+        <h3>Login</h3>
+        {{#if signedInAs}}
+          <p>Signed in as <strong>{{signedInAs}}</strong></p>
+          <a id="logout" class="button">Log out</a>
+        {{else}}
+          {{#if otherLoginServices}}
+            <div class="entry-social">
+              {{#each loginServices}}
+                {{> social}}
+              {{/each}}
+              <div class="email-option or-sign-in">Or...</div>
+            </div>
+          {{/if}}
+          {{> error}}
+          <form class="entry-form" id='signIn'>
+            <input name="email" type="email" class="form-control" value='{{email}}' placeholder="{{emailPlaceholder}}">
+            <input name="password" type="password" class="form-control" value='{{password}}' placeholder="Password">
+            <button type="submit" class="submit btn btn-default">Sign in</button>
+          </form>
+          <p>
+            <a href="/sign-up">Create Account</a><span class="login-separator"> • </span>
+            <a href="/forgot-password">Recover Password</a>
+          </p>
         {{/if}}
-        {{> error}}
-        <form class="entry-form" id='signIn'>
-          <input name="email" type="email" class="form-control" value='{{email}}' placeholder="{{emailPlaceholder}}">
-          <input name="password" type="password" class="form-control" value='{{password}}' placeholder="Password">
-          <button type="submit" class="submit btn btn-default">Sign in</button>
-        </form>
-        <p>
-        <a href="/forgot-password">Recover Password</a> •
-        <a href="/sign-up">Create Account</a></p>
-      {{/if}}
+      </div>
     </div>
   </div>
 </template>
