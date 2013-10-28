@@ -1,12 +1,18 @@
 <template name="tag_block">
-  <div class="reveal-modal" id="blockTagModal" data-zone={{zone}}>
-    <h3>Add Blocks by Tag</h3>
-    <div class="modal-body">
+  <div class="azimuth-modal" id="blockTagModal" data-zone={{zone}}>
+    <div class="modal-header row">
+      <div class="large-12 columns"><h3>Add Blocks by Tag</h3></div>
+    </div>
+    <div class="modal-body row">
       <input type="text" name="tag" id="tag" placeholder="Enter Tag" />
     </div>
     <div class="modal-footer">
-      <a class="button" data-dismiss="modal">Cancel</a>
-      <a class="button button-danger add-block-by-tag">Add Blocks</a>
+      <div class="large-2 columns">
+        <a href="#" class="button secondary close">Cancel</a>
+      </div>
+      <div class="large-2 large-offset-8 columns">
+        <a href="#" class="add-block-by-tag button">Delete</a>
+      </div>
     </div>
   </div>
 </template>
