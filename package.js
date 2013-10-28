@@ -3,7 +3,7 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.use(['less', 'templating'], 'client');
+  api.use(['less', 'templating', 'modernizr-meteor'], 'client');
   api.use(['azimuth-core'], 'client', {unordered: true});
 
   api.add_files([
