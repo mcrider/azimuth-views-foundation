@@ -26,10 +26,6 @@ Package.on_use(function (api) {
     'lib/foundation/js/foundation.topbar.js',
 
     'css/style.less',
-    'blocks/basic_content/basic_content.html',
-    'blocks/basic_content/basic_content_edit.html',
-    'blocks/blog_post/blog_post.html',
-    'blocks/blog_post/blog_post_edit.html',
     'blocks/four_column/four_column.html',
     'blocks/four_column/four_column_edit.html',
     'blocks/six_column/six_column.html',
