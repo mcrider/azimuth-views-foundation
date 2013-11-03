@@ -9,16 +9,18 @@
     </ul>
     <section class="top-bar-section">
       <!-- Right Nav Section -->
-      {{#if isInRole 'admin'}}
+      {{#ifAuthorOrAdmin}}
         <ul class="right">
           <li class="has-dropdown not-click">
             <a href="#"><i class="icon-cogs"></i><span class="show-for-small">Admin</span> <b class="caret"></b></a>
             <ul id="adminMenu" class="dropdown">
               <li><label>Admin</label></li>
-              <li><a href="/site_settings">Site Settings</a></li>
-              <li><a href="/navigation">Site Navigation</a></li>
+              {{#if isInRole 'admin'}}
+                <li><a href="/site_settings">Site Settings</a></li>
+                <li><a href="/navigation">Site Navigation</a></li>
+                <li><a href="/users">Users</a></li>
+              {{/if}}
               <li><a href="/assets">Asset Library</a></li>
-              <li><a href="/users">Users</a></li>
               <li><a href="/new_page">New Page</a></li>
               <li class="has-dropdown not-click">
                 <a href="#">Edit Page</a>
@@ -31,7 +33,7 @@
             </ul>
           </li>
         </ul>
-      {{/if}}
+      {{/ifAuthorOrAdmin}}
       {{#ifSetting 'showLoginInHeader'}}
         <ul class="right">
           <li class=""><a href="/login"><i class="icon-user{{#if signedInAs}} logged-in{{/if}}"></i><span class="show-for-small">Login / Logout</span></a></li>

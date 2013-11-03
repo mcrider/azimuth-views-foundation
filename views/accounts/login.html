@@ -22,7 +22,7 @@
             <button type="submit" class="submit btn btn-default">Sign in</button>
           </form>
           <p>
-            <a href="/sign-up">Create Account</a><span class="login-separator"> • </span>
+            {{#ifOpenRegistration}}<a href="/sign-up">Create Account</a><span class="login-separator"> • </span>{{/ifOpenRegistration}}
             <a href="/forgot-password">Recover Password</a>
           </p>
         {{/if}}
