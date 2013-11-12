@@ -1,5 +1,5 @@
 <template name="header">
-  <nav class="top-bar">
+  <nav class="top-bar hide-until-rendered">
     <ul class="title-area">
       <!-- Title Area -->
       <li class="name">
@@ -39,11 +39,12 @@
           <li class=""><a href="/login"><i class="icon-user{{#if signedInAs}} logged-in{{/if}}"></i><span class="show-for-small">Login / Logout</span></a></li>
         </ul>
       {{/ifSetting}}
-      {{#with headerNav}}
-        {{>header_nav_root}}
-      {{/with}}
+      {{#isolate}}
+        {{#with headerNav}}
+          {{>header_nav_root}}
+        {{/with}}
+      {{/isolate}}
     </section>
-
   </nav>
 </template>
 
