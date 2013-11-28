@@ -1,7 +1,12 @@
 <template name="layout">
-  <div id="contents">
-    {{yield 'header'}}
-    <div id="page">{{yield}}</div>
-    {{yield 'footer'}}
+  <div class="container">
+    {{yield 'admin_panel'}}
+    <div class="contents-container">
+      <div id="contents">
+        {{yield 'header'}}
+        <div id="page">{{yield}}</div>
+        {{yield 'footer'}}
+      </div>
+    </div>
   </div>
 </template>
