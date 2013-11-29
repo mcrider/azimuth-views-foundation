@@ -3,7 +3,7 @@
     <div class="row">
       <div class="large-6 columns"><h2>Users</h2></div>
       <div class="large-6 columns create-user-button-container">
-        <h2><a class="button create-user"><i class="icon-plus"></i>&nbsp;Create User</a></h2>
+        <h2><a class="button create-user"><i class="fa fa-plus"></i>&nbsp;Create User</a></h2>
       </div>
     </div>
     <div class="row">
@@ -22,15 +22,15 @@
             {{#each users}}
               <tr>
                 <td class="roles">
-                  <a class="admin" title="Admin"><i class="icon-key{{#ifAdmin this._id}} enabled{{/ifAdmin}}"></i></a>
-                  <a class="author" title="Author"><i class="icon-book{{#ifAuthor this._id}} enabled{{/ifAuthor}}"></i></a>
+                  <a class="admin" title="Admin"><i class="fa fa-key{{#ifAdmin this._id}} enabled{{/ifAdmin}}"></i></a>
+                  <a class="author" title="Author"><i class="fa fa-book{{#ifAuthor this._id}} enabled{{/ifAuthor}}"></i></a>
                 </td>
                 <!--<td>{{profile.name}}</td>-->
                 <td>{{emails.0.address}}</td>
                 <td>{{humanReadableTime createdAt}}</td>
                 {{#if isInRole 'admin'}}<td>
-                    <!--<a href="#"><i class="icon-pencil"></i></a>-->
-                    <a class="delete-user remove" href="#"><i class="icon-remove"></i></a>
+                    <!--<a href="#"><i class="fa fa-pencil"></i></a>-->
+                    <a class="delete-user remove" href="#"><i class="fa fa-times"></i></a>
                 </td>{{/if}}
               </tr>
             {{/each}}

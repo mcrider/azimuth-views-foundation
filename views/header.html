@@ -12,7 +12,7 @@
       {{#ifAuthorOrAdmin}}
         <ul class="right">
           <li class="has-dropdown not-click">
-            <a href="#"><i class="icon-cogs"></i><span class="show-for-small">Admin</span> <b class="caret"></b></a>
+            <a href="#"><i class="fa fa-cogs"></i><span class="show-for-small">Admin</span> <b class="caret"></b></a>
             <ul id="adminMenu" class="dropdown">
               <li><label>Admin</label></li>
               {{#if isInRole 'admin'}}
@@ -36,7 +36,7 @@
       {{/ifAuthorOrAdmin}}
       {{#ifSetting 'showLoginInHeader'}}
         <ul class="right">
-          <li class=""><a href="/login"><i class="icon-user{{#if signedInAs}} logged-in{{/if}}"></i><span class="show-for-small">Login / Logout</span></a></li>
+          <li class=""><a href="/login"><i class="fa fa-user{{#if signedInAs}} logged-in{{/if}}"></i><span class="show-for-small">Login / Logout</span></a></li>
         </ul>
       {{/ifSetting}}
       {{#isolate}}
