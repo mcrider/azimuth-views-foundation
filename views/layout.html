@@ -1,11 +1,11 @@
 <template name="layout">
-  <div class="container">
-    {{yield 'admin_panel'}}
+  <div class="azimuth-container">
+    {{> yield 'admin_panel'}}
     <div class="contents-container">
       <div id="contents">
-        {{yield 'header'}}
-        <div id="page">{{yield}}</div>
-        {{yield 'footer'}}
+        {{> yield 'header'}}
+        <div id="page">{{> yield}}</div>
+        {{> yield 'footer'}}
       </div>
     </div>
   </div>

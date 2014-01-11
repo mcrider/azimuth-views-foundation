@@ -2,7 +2,7 @@
   <div class="container sign-up">
     <div class="row">
       <div class="large-6">
-        {{#ifOpenRegistration}}
+        {{#if openRegistration}}
           <h3>Create an Account</h3>
           {{#if otherLoginServices}}
             <p class="entry-signin-cta">If you already have an account <a href="/login">sign in</a>.</p>
@@ -31,7 +31,7 @@
           </form>
         {{else}}
           <p>Sorry, registrations are currently closed</p>
-        {{/ifOpenRegistration}}
+        {{/if}}
       </div>
     </div>
   </div>
