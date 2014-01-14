@@ -1,22 +1,28 @@
 <template name="block_display">
-  <div class="azimuth-block-zone row">
-    <div class="azimuth-block-zone-toolbar">
-      <h4>{{zoneLabel zone}}</h4>
-      <a href="#" class="block-zone-add" data-zone={{zone}}><i class="icon icon-plus"></i></a>
-      <a href="#" class="block-zone-edit" data-zone={{zone}}><i class="icon icon-gear"></i></a>
-    </div>
-    <div class="azimuth-block-edit-panel">
-      <ul class="edit-buttons">
-        <li><a href="#" class="block-move-left"><i class="icon icon-chevron-left"></i></a></li>
-        <li><a href="#" class="block-edit"><i class="icon icon-document-edit"></i></a></li>
-        <li><a href="#" class="block-delete"><i class="icon icon-cross"></i></a></li>
-        <li><a href="#" class="block-add"><i class="icon icon-plus"></i></a></li>
-        <li><a href="#" class="block-move-right"><i class="icon icon-chevron-right"></i></a></li>
-      </ul>
-    </div>
+  <div class="azimuth-block-zone row" data-zone={{zone}}>
+    {{#if isAuthorOrAdmin}}
+      <div class="azimuth-block-zone-toolbar">
+        <h4>{{zoneLabel zone}}</h4>
+        <a href="#" class="block-zone-add"><i class="icon icon-plus"></i></a>
+        <a href="#" class="block-zone-edit"><i class="icon icon-gear"></i></a>
+      </div>
+      <div class="azimuth-block-edit-panel">
+        <ul class="edit-buttons">
+          <li><a href="#" class="block-move-left"><i class="icon icon-chevron-left"></i></a></li>
+          <li><a href="#" class="block-edit"><i class="icon icon-document-edit"></i></a></li>
+          <li><a href="#" class="block-delete"><i class="icon icon-cross"></i></a></li>
+          <li><a href="#" class="block-add"><i class="icon icon-plus"></i></a></li>
+          <li><a href="#" class="block-move-right"><i class="icon icon-chevron-right"></i></a></li>
+        </ul>
+      </div>
+    {{/if}}
     {{#each pageBlocks}}
       <div class="azimuth-block" data-page-block-id={{_id}}>
         {{> renderPageBlock this}}
+      </div>
+    {{else}}
+      <div class="no-blocks">
+        <h3>There are no blocks in this block zone.  Click <a href="#" class="block-zone-add" data-zone={{zone}}><i class="icon icon-plus"></i></a> to add one!</h3>
       </div>
     {{/each}}
   </div>

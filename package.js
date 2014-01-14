@@ -31,6 +31,7 @@ Package.on_use(function (api) {
     'blocks/three_column/three_column.html',
     'blocks/twelve_column/twelve_column.html',
     'blocks/two_column/two_column.html',
+    'blocks/row_separator/row_separator.html',
     'pages/home_page/home_page.html',
     'pages/page_default/page_default.html',
     'pages/sidebar_left/sidebar_left.html',

@@ -1,6 +1,6 @@
 <template name="layout">
   <div class="azimuth-container">
-    {{> yield 'admin_panel'}}
+    {{#if isAdmin}}{{> yield 'admin_panel'}}{{/if}}
     <div class="contents-container">
       <div id="contents">
         {{> yield 'header'}}
