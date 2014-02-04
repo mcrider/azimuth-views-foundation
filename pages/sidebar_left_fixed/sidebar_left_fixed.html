@@ -3,16 +3,11 @@
   <div class="container sidebar-left" data-target="#toc">
     <div class="row">
       <div class="large-3 columns">
-        <ul id="toc" class="nav nav-list affix">
-          {{{toc}}}
-        </ul>
+        {{{renderBlocks zone="sidebar"}}}
       </div>
 
       <div class="large-9 columns">
-        <h1>{{title}}</h1>
-        <div id="content">
-          <p>{{{contents}}}</p>
-        </div>
+        {{{renderBlocks zone="body"}}}
       </div>
 
     </div>

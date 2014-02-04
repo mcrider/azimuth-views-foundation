@@ -38,8 +38,11 @@ Package.on_use(function (api) {
     'pages/sidebar_left_fixed/sidebar_left_fixed.css',
     'pages/sidebar_left_fixed/sidebar_left_fixed.js',
     'pages/sidebar_right/sidebar_right.html',
-    'views/layout.html',
     'views/404.html',
+    'views/block_display.html',
+    'views/footer.html',
+    'views/header.html',
+    'views/layout.html',
     'views/loading.html',
     'views/not_authorized.html',
     'views/accounts/account_buttons.html',
@@ -48,9 +51,6 @@ Package.on_use(function (api) {
     'views/accounts/login.html',
     'views/accounts/sign_up.html',
     'views/accounts/social.html',
-    'views/block_display.html',
-    'views/footer.html',
-    'views/header.html',
     'lib/utils.js'
   ], 'client');
 });

@@ -1,13 +1,9 @@
 <template name="home_page">
 {{#with page}}
   <div class="hero-unit">
-    <h1>{{hero_header}}</h1>
-    <p>{{{hero_sub}}}</p>
+    {{{renderBlocks zone="hero"}}}
   </div>
   <div class="container">
-    <div class="row">
-      <div class="large-12 columns">{{{contents}}}</div>
-    </div>
     <div class="row">
       {{{renderBlocks zone="body"}}}
     </div>
