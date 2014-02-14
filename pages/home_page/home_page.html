@@ -1,11 +1,11 @@
 <template name="home_page">
 {{#with page}}
   <div class="hero-unit">
-    {{{renderBlocks zone="hero"}}}
+    {{> renderBlocks zone="hero"}}
   </div>
   <div class="container">
     <div class="row">
-      {{{renderBlocks zone="body"}}}
+      {{> renderBlocks zone="body"}}
     </div>
   </div>
 {{/with}}
