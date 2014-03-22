@@ -1,49 +1,23 @@
 <template name="header">
-  <nav class="top-bar hide-until-rendered">
+  <nav class="top-bar">
     <ul class="title-area">
       <!-- Title Area -->
       <li class="name">
-        <h1 class="nav-title"><a href="/">{{#ifSetting 'logoUrl'}}<img class="logo" src="{{getSetting 'logoUrl'}}">{{/ifSetting}}{{getSetting 'siteName'}}</a></h1>
+        <h1 class="nav-title"><a href="/">{{#if getSetting 'logoUrl'}}<img class="logo" src="{{getSetting 'logoUrl'}}">{{/if}}{{getSetting 'siteName'}}</a></h1>
       </li>
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
     <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      {{#ifAuthorOrAdmin}}
+
+      {{#if getSetting 'showLoginInHeader'}}
         <ul class="right">
-          <li class="has-dropdown not-click">
-            <a href="#"><i class="fa fa-cogs"></i><span class="show-for-small">Admin</span> <b class="caret"></b></a>
-            <ul id="adminMenu" class="dropdown">
-              <li><label>Admin</label></li>
-              {{#if isInRole 'admin'}}
-                <li><a href="/site_settings">Site Settings</a></li>
-                <li><a href="/navigation">Site Navigation</a></li>
-                <li><a href="/users">Users</a></li>
-              {{/if}}
-              <li><a href="/assets">Asset Library</a></li>
-              <li><a href="/new_page">New Page</a></li>
-              <li class="has-dropdown not-click">
-                <a href="#">Edit Page</a>
-                <ul class="dropdown">
-                  {{#each pages}}
-                    <li><a href="/{{slug}}/edit">{{title}}</a></li>
-                  {{/each}}
-                </ul>
-              </li>
-            </ul>
-          </li>
+          <li class=""><a href="/login"><i class="icon icon-user{{#if signedInAs}} logged-in{{/if}}"></i><span class="show-for-small">Login / Logout</span></a></li>
         </ul>
-      {{/ifAuthorOrAdmin}}
-      {{#ifSetting 'showLoginInHeader'}}
-        <ul class="right">
-          <li class=""><a href="/login"><i class="fa fa-user{{#if signedInAs}} logged-in{{/if}}"></i><span class="show-for-small">Login / Logout</span></a></li>
-        </ul>
-      {{/ifSetting}}
-      {{#isolate}}
-        {{#with headerNav}}
-          {{>header_nav_root}}
-        {{/with}}
-      {{/isolate}}
+      {{/if}}
+
+      {{#with headerNav}}
+        {{>header_nav_root}}
+      {{/with}}
     </section>
   </nav>
 </template>
@@ -74,9 +48,11 @@
           {{>header_nav_child}}
         </li>
       {{else}}
-        <li>
-          <a href="{{url}}">{{title}}</a>
-        </li>
+        {{#with child}}
+          <li>
+            <a href="{{url}}">{{title}}</a>
+          </li>
+        {{/with}}
       {{/if}}
     {{/each}}
   </ul>

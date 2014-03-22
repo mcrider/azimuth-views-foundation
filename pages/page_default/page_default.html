@@ -2,12 +2,8 @@
 {{#with page}}
   <div class="container">
     <div class="row">
-      <div class="large-10 columns">
-        <h1>{{title}}</h1>
-        <p>{{{contents}}}</p>
-        <div class="blocks blocks-body">
-          {{{renderBlocks zone="body"}}}
-        </div>
+      <div class="large-12 columns">
+        {{> renderBlocks zone="body"}}
       </div>
     </div>
   </div>
