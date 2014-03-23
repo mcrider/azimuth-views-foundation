@@ -1,5 +1,5 @@
 Package.describe({
-    summary: "Azimuth CMS frontend templates (using Foundation 4.x)"
+    summary: "Azimuth CMS frontend templates (using Foundation 5.x)"
 });
 
 Package.on_use(function (api) {
