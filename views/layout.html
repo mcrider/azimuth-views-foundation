@@ -1,11 +1,11 @@
 <template name="layout">
   <div class="azimuth-container">
-    {{#if isAdmin}}{{> yield region='admin_panel'}}{{/if}}
+    {{#if isAdmin}}{{> admin_panel}}{{/if}}
     <div class="contents-container">
       <div id="contents">
-        {{> yield region='header'}}
+        {{> header}}
         <div id="page">{{> yield}}</div>
-        {{> yield region='footer'}}
+        {{> footer}}
       </div>
     </div>
   </div>
