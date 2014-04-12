@@ -1,6 +1,6 @@
 <template name="layout">
   <div class="azimuth-container">
-    {{#if isAdmin}}{{> admin_panel}}{{/if}}
+    {{#if isAuthorOrAdmin}}{{> admin_panel}}{{/if}}
     <div class="contents-container">
       <div id="contents">
         {{> header}}
