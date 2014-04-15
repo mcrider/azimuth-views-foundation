@@ -1,18 +1,20 @@
 <template name="header">
-  <nav class="top-bar" data-topbar>
+  <nav class="top-bar">
     <ul class="title-area">
       <!-- Title Area -->
       <li class="name">
         <h1 class="nav-title"><a href="/">{{#if getSetting 'logoUrl'}}<img class="logo" src="{{getSetting 'logoUrl'}}">{{/if}}{{getSetting 'siteName'}}</a></h1>
       </li>
-      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
     <section class="top-bar-section">
+
       {{#if getSetting 'showLoginInHeader'}}
         <ul class="right">
           <li class=""><a href="/login"><i class="icon icon-user{{#if signedInAs}} logged-in{{/if}}"></i><span class="show-for-small">Login / Logout</span></a></li>
         </ul>
       {{/if}}
+
       {{#with headerNav}}
         {{>header_nav_root}}
       {{/with}}
@@ -25,7 +27,7 @@
     {{#each this}}
       {{#if children}}
         <li class="has-dropdown">
-          <a href="{{url}}">{{title}}<b class="caret"></b></a>
+          <a href="{{url}}" data-toggle="dropdown">{{title}}<b class="caret"></b></a>
           {{>header_nav_child}}
         </li>
       {{else}}
@@ -40,18 +42,18 @@
 <template name="header_nav_child">
   <ul class="dropdown">
     {{#each children}}
-      {{#with child}}
-        {{#if children}}
-          <li class="has-dropdown">
-            <a href="{{url}}">{{title}}<b class="caret"></b></a>
-            {{>header_nav_child}}
-          </li>
-        {{else}}
+      {{#if children}}
+        <li class="has-dropdown">
+          <a href="{{url}}">{{title}}<b class="caret"></b></a>
+          {{>header_nav_child}}
+        </li>
+      {{else}}
+        {{#with child}}
           <li>
             <a href="{{url}}">{{title}}</a>
           </li>
-        {{/if}}
-      {{/with}}
+        {{/with}}
+      {{/if}}
     {{/each}}
   </ul>
 </template>

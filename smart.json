@@ -7,7 +7,6 @@
 	"git": "https://github.com/mcrider/azimuth-views-foundation.git",
 	"packages": {
 		"azimuth-core": {},
-		"zurb-foundation": {},
 		"modernizr-meteor": {}
 	}
 }
