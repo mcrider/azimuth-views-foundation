@@ -39,7 +39,6 @@ Package.on_use(function (api) {
     'views/footer.html',
     'views/header.html',
     'views/layout.html',
-    'views/loading.html',
     'views/not_authorized.html',
     'views/accounts/account_buttons.html',
     'views/accounts/error.html',
