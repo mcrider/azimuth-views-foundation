@@ -6,8 +6,8 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
-  api.use(['less', 'templating', 'mrt:modernizr-meteor', 'jquery'], 'client');
-  api.use('mcrider:azimuth-core', {unordered: true});
+  api.use(['less@1.0.11', 'templating@1.0.9', 'mrt:modernizr-meteor@2.6.2', 'jquery@1.0.1'], 'client');
+  api.use('mcrider:azimuth-core@0.3.20', {unordered: true});
 
   api.add_files('lib/foundation/css/normalize.css', 'client');
   api.add_files('lib/foundation/css/foundation.css', 'client');
